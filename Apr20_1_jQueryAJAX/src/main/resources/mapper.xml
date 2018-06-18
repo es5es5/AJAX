@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kwon.ajax.Mapper">
+	<select id="getAllMenu"
+		resultType="com.kwon.ajax.Menu">
+		select * from apr20_menu order by m_name
+	</select>
+	<select id="searchMenuByPrice"
+		parameterType="com.kwon.ajax.Menu"
+		resultType="com.kwon.ajax.Menu">
+		select * 
+		from apr20_menu 
+		where m_price &lt;= #{m_price}
+		order by m_name
+	</select>
+	<select id="searchMenuByName"
+		parameterType="com.kwon.ajax.Menu"
+		resultType="com.kwon.ajax.Menu">
+		select * 
+		from apr20_menu 
+		where m_name like '%'||#{m_name}||'%'
+		order by m_name
+	</select>
+	<select id="getAllStudent"
+		resultType="com.kwon.ajax.Student">
+		select * 
+		from apr23_student
+		order by s_name	
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

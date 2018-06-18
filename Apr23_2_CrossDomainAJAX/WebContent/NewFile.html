@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 가져오는 데이터가 JSON이면
+		// $.getJSON(주소, 콜백);
+		var url = "http://172.16.1.100/ajax/student.getAllJSONP";
+		url += "?callback=?"; // JSONP연관된 파라메터에 ?넣어서
+		
+		$.getJSON(url, function(json){
+			alert(json);
+		});
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
